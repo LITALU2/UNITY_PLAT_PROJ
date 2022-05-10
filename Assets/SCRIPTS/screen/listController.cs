@@ -6,7 +6,7 @@ using TMPro;
 public class listController : MonoBehaviour
 {
 
-    int listChosen = 0;
+    public int listChosen = 0;
 
     public GameObject tx1;
     public GameObject tx2;

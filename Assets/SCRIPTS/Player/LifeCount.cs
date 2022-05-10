@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LifeCount : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class LifeCount : MonoBehaviour
         {
             Debug.Log("YOU WON");
             Debug.Log("time to get out of here");
+            SceneManager.LoadScene(2);
 
         }
     }
@@ -34,11 +36,13 @@ public class LifeCount : MonoBehaviour
 
     public void AddLife()
     {
-
-        //add value of live remaining
-        liveRemaining++;
+        if (liveRemaining < 3)
+        {
+            //add value of live remaining
+            liveRemaining++;
+        }
         //add one of the hearts
-        lives[liveRemaining].enabled = true;
+        lives[liveRemaining-1].enabled = true;
         
     }
 }
